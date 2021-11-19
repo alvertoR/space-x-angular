@@ -1,2 +1,9 @@
-<p>view-home works!</p>
-<app-card-team></app-card-team>
+<p class="title">Our teams</p>
+<div class="card">
+    <app-card-team
+        class="card-team"
+        *ngFor="let team of teams"
+        [team]="team"
+        [routerLink]="['/team', team.name]"
+    ></app-card-team>
+</div>
