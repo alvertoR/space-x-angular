@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamCard } from 'src/app/typings';
+import { TeamsServices } from 'src/app/core/services/teams/teams.service';
 
 @Component({
   selector: 'app-view-home',
@@ -8,27 +9,14 @@ import { TeamCard } from 'src/app/typings';
 })
 export class ViewHomeComponent implements OnInit {
 
-  public teams: TeamCard[] = [
-    {
-      name:'Dragons',
-      urlImage: '../../../../assets/icons/dragon.svg',
-      description:'dragon icon'
-    },
-    {
-      name:'Ships',
-      urlImage: '../../../../assets/icons/ship.svg',
-      description:'ship icon'
-    },
-    {
-      name:'Rockets',
-      urlImage:'../../../../assets/icons/rocket.svg',
-      description:'rocket icon'
-    }
-  ];
+  public teams!: TeamCard[];
 
-  constructor() { }
+  constructor(
+    private teamsServices: TeamsServices
+  ) { }
 
   ngOnInit(): void {
+    this.teams = this.teamsServices.getTeams();
   }
 
 }

@@ -5,8 +5,10 @@
     font-weight: normal;
     font-size: 22px;
     line-height: 22px;
+    text-transform: capitalize;
     color: var(--simple-white);
 }
+
 .card-team-container {
     margin-top: 50px;
     height: 111px;
