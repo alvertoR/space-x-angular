@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { TeamCard, ResponseAPIGet } from 'src/app/typings';
-import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -46,5 +45,10 @@ export class TeamsServices {
       }catch(error: any){
         return error;
       }
+    }
+
+    async getItemTeamDescriptionById(idItem: string, teamName: string): Promise<ResponseAPIGet> {
+      const response =  await this.fetchTeamByName(teamName);
+      return response.find(item => item.id === idItem) as ResponseAPIGet;
     }
  }

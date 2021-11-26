@@ -1,13 +1,16 @@
-<div class="container">
-    <p class="title-item">Dragon 3</p>
+<div
+    *ngFor="let team of teamItems"
+    class="container">
+    <p class="title-item">{{ team.name }}</p>
     <div class="container-item-image">
+        <!--TODO mostrar una imagen cuando el la imagen sea null-->
         <img 
             class="item-img" 
-            src="https://imgur.com/DaCfMsj.jpg" 
+            [src]="team.flickr_images ? team.flickr_images : team.image" 
             alt=""
         >
     </div>
-    <a class="button-redirect" [routerLink]="['/team', 'dragons', '154555']">
+    <a class="button-redirect" [routerLink]="['/team', currentTeam, team.id]">
         <p class="button-redirect-title">Show me more!</p>
     </a>
 </div>

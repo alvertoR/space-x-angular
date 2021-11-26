@@ -20,6 +20,7 @@ export class ItemsComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
+    //TODO validar si el team existe y en caso que no exista redireccionar a los teams.
     this.setCurrentTeam();
     await this.getTeamByName();
   }

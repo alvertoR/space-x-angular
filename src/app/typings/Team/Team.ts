@@ -5,10 +5,11 @@ export interface TeamCard {
 }
 
 export interface ResponseAPIGet {
+    id: string;
     type: string;
     name: string;
     description?: string;
-    flickr_images?: Array<string>;
+    flickr_images: Array<string>;
     image?: string;
     link?: string;
     wikipedia?: string;
