@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,100&display=swap');
 
 :root {
     --primary-color: linear-gradient(180deg, #434343 0%, #000000 100%);
     --secondary-color: #DD7F20;
     --simple-white: #FFFFFF;
     --font: 'Press Start 2P', cursive;
+    --secondary-font: 'Prompt', sans-serif;
 }
 
 html {

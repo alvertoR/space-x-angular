@@ -1,1 +1,41 @@
-<p>item-description works!</p>
+<div class="container">
+    <div class="container-title">
+        <div class="container-team-image">
+            <img 
+                class="team-img"
+                [src]="team.urlImage" 
+                alt="team.description"
+            >
+        </div>
+        <p class="container-title-text">{{ itemInformation?.name }}</p>
+    </div>
+    <div class="container-information">
+        <p class="type-text">Type: {{ itemInformation?.type }}</p>
+        <div 
+            *ngIf="isAnArray; else elseImg" 
+            class="container-information-image"
+        >        
+            <img 
+                *ngFor="let img of itemInformation?.flickr_images"
+                class="information-img"
+                [src]="img" 
+                alt="team.description"
+            >
+        </div>
+        <ng-template #elseImg>
+            <img 
+                class="information-img"
+                [src]="itemInformation?.image" 
+                alt="team.description"
+            >
+        </ng-template>
+        <p class="container-description">{{ itemInformation?.description ? itemInformation?.description : noDescription }}</p>
+    </div>
+    <a class="button-redirect"
+        target="__blank"
+        [href]="itemInformation?.link ? itemInformation?.link : itemInformation?.wikipedia"
+    >
+        <p class="button-redirect-title">Lear more!</p>
+    </a>
+</div>
+
