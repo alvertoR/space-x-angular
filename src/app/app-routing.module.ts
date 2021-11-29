@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('./team-selected/team-selected.module').then(module => module.TeamSelectedModule)
       }
     ]
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then(module => module.NotFoundModule)
   }
 ];
 
