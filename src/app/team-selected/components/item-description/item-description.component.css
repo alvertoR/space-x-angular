@@ -35,6 +35,14 @@
     max-width: 100%;
 }
 
+.container-information {
+    padding-top: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container-information-image {
     display: flex;
     flex-direction: column;
@@ -42,18 +50,16 @@
 }
 
 .information-img {
-    margin-top: 19px;
-    width: 320px;
+    margin-bottom: 19px;
+    width: 90vw;
     height: 210px;
     border-radius: 4px;
 }
 
-.container-information {
-    padding-top: 20px;
-    padding-left: 18px;
-}
 
 .type-text {
+    padding-top: 20px;
+    padding-left: 21px;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -63,7 +69,7 @@
 
 .container-description {
     margin-top: 19px;
-    width: 336px;
+    width: 90vw;
     font-family: var(--secondary-font);
     font-style: normal;
     font-weight: normal;

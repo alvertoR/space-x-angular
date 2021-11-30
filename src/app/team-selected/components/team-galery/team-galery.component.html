@@ -2,10 +2,14 @@
     <div class="container-team-image">
         <img 
             class="team-img"
-            [src]="team.urlImage" 
+            [src]="team?.urlImage" 
             alt="team.description"
         >
     </div>
-    <p class="container-title-text">{{ team.name }}</p>
+    <p class="container-title-text">{{ team?.name }}</p>
 </div>
-<app-items></app-items>
+<app-items
+    *ngFor="let team of teamItems"
+    [item]=team
+>
+</app-items>

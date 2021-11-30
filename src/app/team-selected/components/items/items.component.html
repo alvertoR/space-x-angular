@@ -1,16 +1,23 @@
 <div
-    *ngFor="let team of teamItems"
     class="container">
-    <p class="title-item">{{ team.name }}</p>
+    <p class="title-item">{{ item?.name }}</p>
     <div class="container-item-image">
-        <!--TODO mostrar una imagen cuando el la imagen sea null-->
         <img 
+            *ngIf="item.image !== null; else elseBlock"
             class="item-img" 
-            [src]="team.flickr_images ? team.flickr_images : team.image" 
+            [src]="item.flickr_images ? item.flickr_images : item.image" 
             alt=""
         >
+        <ng-template #elseBlock>
+            <img 
+                class="item-img" 
+                src="../../../../assets/icons/noImage.svg" 
+                alt="image not found"
+            >
+        </ng-template>
     </div>
-    <a class="button-redirect" [routerLink]="['/team', currentTeam, team.id]">
+    <a class="button-redirect" [routerLink]="['/team', currentTeam, item.id]">
         <p class="button-redirect-title">Show me more!</p>
     </a>
 </div>
+

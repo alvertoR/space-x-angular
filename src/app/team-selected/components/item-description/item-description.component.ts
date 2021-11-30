@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute } from '@angular/router';
+import { Params, ActivatedRoute, Router } from '@angular/router';
 import { TeamsServices } from 'src/app/core/services/teams/teams.service';
 import { ResponseAPIGet, TeamCard } from '../../../typings'
 
@@ -19,12 +19,16 @@ export class ItemDescriptionComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private teamService: TeamsServices
+    private teamService: TeamsServices,
+    private router: Router
   ) { }
 
   async ngOnInit(): Promise<void> {
     this.setCurrentTeam();
     await this.fetchItemById();
+    if(this.itemInformation === undefined){
+      this.router.navigate(['home']);
+    }
     this.isAnArray = this.itemInformation?.flickr_images ? true : false;
   }
 

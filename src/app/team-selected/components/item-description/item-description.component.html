@@ -9,8 +9,8 @@
         </div>
         <p class="container-title-text">{{ itemInformation?.name }}</p>
     </div>
+    <p class="type-text">Type: {{ itemInformation?.type }}</p>
     <div class="container-information">
-        <p class="type-text">Type: {{ itemInformation?.type }}</p>
         <div 
             *ngIf="isAnArray; else elseImg" 
             class="container-information-image"
@@ -24,10 +24,18 @@
         </div>
         <ng-template #elseImg>
             <img 
+                *ngIf="itemInformation?.image; else elseBlock"
                 class="information-img"
                 [src]="itemInformation?.image" 
                 alt="team.description"
             >
+            <ng-template #elseBlock>
+                <img 
+                    class="item-img" 
+                    src="../../../../assets/icons/noImage.svg" 
+                    alt="image not found"
+                >
+            </ng-template>
         </ng-template>
         <p class="container-description">{{ itemInformation?.description ? itemInformation?.description : noDescription }}</p>
     </div>

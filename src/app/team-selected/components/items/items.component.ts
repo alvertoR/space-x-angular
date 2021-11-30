@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TeamsServices } from 'src/app/core/services/teams/teams.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ResponseAPIGet } from 'src/app/typings';
@@ -12,22 +12,14 @@ import { ResponseAPIGet } from 'src/app/typings';
 export class ItemsComponent implements OnInit {
 
   public currentTeam!: string;
-  public teamItems!: ResponseAPIGet[];
+  @Input() item!: ResponseAPIGet;
 
   constructor(
-    private teamService: TeamsServices,
     private route: ActivatedRoute
   ) { }
 
-  async ngOnInit(): Promise<void> {
-    //TODO validar si el team existe y en caso que no exista redireccionar a los teams.
+  ngOnInit(): void {
     this.setCurrentTeam();
-    await this.getTeamByName();
-  }
-
-  async getTeamByName(): Promise<void> {
-    const response = await this.teamService.fetchTeamByName(this.currentTeam);
-    this.teamItems = response;
   }
 
   setCurrentTeam(): void {
