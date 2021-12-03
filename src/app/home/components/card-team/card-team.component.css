@@ -24,3 +24,32 @@
     transform: translate(-50%,-50%);
     max-width: 100%;
 }
+
+@media screen and (min-width: 768px) {
+    .card-team {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    .card-team-name {
+        font-size: 58px;
+        padding-top: 35px;
+        padding-left: 16px;
+    }
+
+    .card-team-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .card-team-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+}
+
+@media screen and  (min-width: 1280px) {
+    
+}

@@ -50,3 +50,40 @@
     line-height: 20px; 
     color: var(--simple-white);
 }
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 690px;
+        min-height: 600px;
+        margin-bottom: 60px;
+        margin-top: 40px;
+    }
+
+    .title-item {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .container-item-image {
+        margin-top: 40px;
+        width: 690px;
+        height: 400px;
+    }
+
+    .item-img {
+        width: 690px;
+        height: 400px;
+    }
+
+    .button-redirect {
+        width: 472px;
+        height: 60px;
+        margin-top: 40px;
+    }
+    
+    .button-redirect-title {
+        font-style: normal;
+        font-size: 26px;
+    }
+}

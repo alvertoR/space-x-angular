@@ -22,4 +22,18 @@
     margin-top: 40px;
     border: 1px solid #DD7F20;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .card-team {
+        width: 690px;
+        height: 250px;
+        margin-top: 80px;
+    }
+
+    .title {
+        font-size: 62px;
+        padding-top: 80px;
+    }
 }
